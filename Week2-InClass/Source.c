@@ -34,7 +34,7 @@ int main(void) {
         // Example: sscanf_s(input, "%d", &choice);
     }
 
-    choice = atoi(input);
+    choice = input[0] - 48;
 
     // Use a switch-case to handle menu options
     switch (choice) {
