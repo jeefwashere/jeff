@@ -16,9 +16,11 @@ int main(void) {
     int choice;
     char input[100]; // For safer input handling
 
-    int val1 = 50;
-    int val2 = 30;
+    //values for subtraction method
+    int sub1 = 50;
+    int sub2 = 30;
 
+    //pointer for subtraction function
     int (*subPtr)(int a, int b);
 
     // Display a welcome message
@@ -45,9 +47,9 @@ int main(void) {
         // Call add function (placeholder)
         break;
     case 3:
-        // Call subtract function (placeholder)   
+        // Call subtract function through pointer
     subPtr = &subtract;
-    printf("The answer is %d", subPtr(val1, val2));
+    printf("The answer is %d", subPtr(sub1, sub2));
         break;
     case 4:
         // Call calculate_area function (placeholder)
@@ -79,6 +81,7 @@ int add(int a, int b) {
 // Student 3: Complete subtract() function
 int subtract(int a, int b) {
     // Placeholder
+    // subtracts int a and int b
     int subtraction = a - b;
     return subtraction; // Replace with actual logic
 }
