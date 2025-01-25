@@ -16,18 +16,25 @@ int main(void) {
     int choice;
     char input[100]; // For safer input handling
 
+    int val1 = 50;
+    int val2 = 30;
+
+    int (*subPtr)(int a, int b);
+
     // Display a welcome message
     printf("Welcome to the Collaborative Code Management Program!\n");
 
     // Call the display_menu() function
     displayMenu();
-
+    
     // Accept user input for menu selection
     printf("\nEnter your choice: ");
     if (fgets(input, sizeof(input), stdin) != NULL) {
         // Parse the input (placeholder)
         // Example: sscanf_s(input, "%d", &choice);
     }
+
+    choice = atoi(input);
 
     // Use a switch-case to handle menu options
     switch (choice) {
@@ -38,7 +45,9 @@ int main(void) {
         // Call add function (placeholder)
         break;
     case 3:
-        // Call subtract function (placeholder)
+        // Call subtract function (placeholder)   
+    subPtr = &subtract;
+    printf("The answer is %d", subPtr(val1, val2));
         break;
     case 4:
         // Call calculate_area function (placeholder)
@@ -70,7 +79,8 @@ int add(int a, int b) {
 // Student 3: Complete subtract() function
 int subtract(int a, int b) {
     // Placeholder
-    return 0; // Replace with actual logic
+    int subtraction = a - b;
+    return subtraction; // Replace with actual logic
 }
 
 // Student 4: Implement calculate_area() function
