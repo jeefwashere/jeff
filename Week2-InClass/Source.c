@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // Define constants (if necessary)
 // Example: #define PI 3.14159265358979323846
@@ -27,42 +28,50 @@ int main(void) {
     printf("Welcome to the Collaborative Code Management Program!\n");
 
     // Call the display_menu() function
-    displayMenu();
-    
-    // Accept user input for menu selection
-    printf("\nEnter your choice: ");
-    if (fgets(input, sizeof(input), stdin) != NULL) {
-        // Parse the input (placeholder)
-        // Example: sscanf_s(input, "%d", &choice);
-    }
 
-    choice = input[0] - 48;
+    while (1){
 
-    // Use a switch-case to handle menu options
-    switch (choice) {
-    case 1:
-        greet(); // Call greet function
-        break;
-    case 2:
-        // Call add function (placeholder)
-        break;
-    case 3:
-        // Call subtract function through pointer
-    subPtr = &subtract;
-    printf("The answer is %d", subPtr(sub1, sub2));
-        break;
-    case 4:
-        // Call calculate_area function (placeholder)
-        break;
-    case 5:
-        // Call factorial function (placeholder)
-        break;
-    default:
-        printf("Invalid choice. Please try again.\n");
-        break;
-    }
 
-    return 0;
+        displayMenu();
+
+        // Accept user input for menu selection
+        printf("\nEnter your choice: ");
+        if (fgets(input, sizeof(input), stdin) != NULL) {
+            // Parse the input (placeholder)
+            // Example: sscanf_s(input, "%d", &choice);
+        }
+
+        choice = input[0] - 48;
+
+        // Use a switch-case to handle menu options
+        switch (choice) {
+        case 1:
+            greet(); // Call greet function
+            break;
+        case 2:
+            // Call add function (placeholder)
+            break;
+        case 3:
+            // Call subtract function through pointer
+            subPtr = &subtract;
+            printf("The answer is %d\n\n", subPtr(sub1, sub2));
+            break;
+        case 4:
+            // Call calculate_area function (placeholder)
+            break;
+        case 5:
+            // Call factorial function (placeholder)
+            break;
+        case 6: 
+            return EXIT_FAILURE;
+        default:
+            printf("Invalid choice. Please try again.\n");
+            break;
+        }
+    } 
+
+        return 0;
+   
 }
 
 // Function definitions (placeholders)
@@ -107,4 +116,5 @@ void displayMenu(void) {
     printf("3. Subtract two numbers\n");
     printf("4. Calculate the area of a circle\n");
     printf("5. Calculate the factorial of a number\n");
+    printf("6. Exit\n");
 }
