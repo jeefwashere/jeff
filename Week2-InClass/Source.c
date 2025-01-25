@@ -39,7 +39,7 @@ int main(void) {
     }
 
     // Use a switch-case to handle menu options
-  switch (choice) { 
+    switch (choice) { 
     case 1:
         greet(); // Call greet function
         break;
