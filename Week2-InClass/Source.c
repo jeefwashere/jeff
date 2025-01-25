@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Define constants (if necessary)
-// Example: #define PI 3.14159265358979323846
+#define PI 3.14159265358979323846
 
 // Function declarations
 void greet(void);                    // Student 1
@@ -13,8 +13,14 @@ void displayMenu(void);             // Student 6
 
 int main(void) {
     // Variable declarations
+    double radius = 2.849;
+    int n = 5;
     int choice;
     char input[100]; // For safer input handling
+
+    // Function Pointer
+    double (*areaPtr)(double);
+    unsigned long long (*factorialPtr)(int);
 
     // Display a welcome message
     printf("Welcome to the Collaborative Code Management Program!\n");
@@ -26,8 +32,10 @@ int main(void) {
     printf("\nEnter your choice: ");
     if (fgets(input, sizeof(input), stdin) != NULL) {
         // Parse the input (placeholder)
-        // Example: sscanf_s(input, "%d", &choice);
+        sscanf_s(input, "%d", &choice);
     }
+
+    choice = input[0] - 48;
 
     // Use a switch-case to handle menu options
     switch (choice) {
@@ -41,10 +49,12 @@ int main(void) {
         // Call subtract function (placeholder)
         break;
     case 4:
-        // Call calculate_area function (placeholder)
+        areaPtr = calculateArea; // Function pointer for area calculation
+        printf("The answer is %lf\n", areaPtr(radius)); // Print statement for area result
         break;
     case 5:
-        // Call factorial function (placeholder)
+        factorialPtr = factorial; // Function pointer for factorial function
+        printf("The answer is %llu\n", factorialPtr(n)); // Print statement for factorial result
         break;
     default:
         printf("Invalid choice. Please try again.\n");
@@ -75,14 +85,20 @@ int subtract(int a, int b) {
 
 // Student 4: Implement calculate_area() function
 double calculateArea(double radius) {
-    // Placeholder
-    return 0.0; // Replace with actual logic
+    
+    return PI * radius; // Multiplies PI constants with double value
 }
 
 // Student 5: Develop factorial() function
 unsigned long long factorial(int n) {
-    // Placeholder
-    return 0; // Replace with actual logic
+    
+    if (n == 1) { // Check if the int is 1
+         
+        return 1; // Returns 1 if int is 1
+    }
+
+    return n * factorial(n - 1); // (Recursion function) Return value if n is greater than 1
+    
 }
 
 // Student 6: Implement display_menu() function
