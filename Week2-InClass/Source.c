@@ -11,10 +11,15 @@ double calculateArea(double radius); // Student 4
 unsigned long long factorial(int n); // Student 5
 void displayMenu(void);             // Student 6
 
+
+
+
 int main(void) {
     // Variable declarations
     int choice;
     char input[100]; // For safer input handling
+
+   
 
     // Display a welcome message
     printf("Welcome to the Collaborative Code Management Program!\n");
@@ -27,10 +32,14 @@ int main(void) {
     if (fgets(input, sizeof(input), stdin) != NULL) {
         // Parse the input (placeholder)
         // Example: sscanf_s(input, "%d", &choice);
+
+        choice = input[0] - 48;
+
+        
     }
 
     // Use a switch-case to handle menu options
-    switch (choice) {
+  switch (choice) { 
     case 1:
         greet(); // Call greet function
         break;
@@ -58,7 +67,14 @@ int main(void) {
 
 // Student 1: Implement greet() function
 void greet(void) {
-    // Placeholder
+   
+   
+    printf("\n-----------------------------------------------------\n");
+    printf("Welcome User! Hope you're having a wonderful day!\n");
+    printf("Ready to perform some math operations? ^-^\n");
+    printf("\n-----------------------------------------------------\n");
+
+    return;
 }
 
 // Student 2: Modify add() function to take user input
